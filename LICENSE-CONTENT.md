@@ -24,5 +24,5 @@ Material from other sources keeps its own license:
 
 ## Attribution
 
-When you share or adapt this content, credit "CP491 Introduction to Physical AI, VRU-AI-SWU", link to
-https://github.com/VRU-AI-SWU/cp491-physical-ai-students, link to the license, and say if you changed it.
+When you share or adapt this content, credit "Physical AI with Microduck, VRU-AI-SWU", link to
+https://github.com/VRU-AI-SWU/physical-ai-with-microduck-students, link to the license, and say if you changed it.
