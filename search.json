@@ -1,0 +1,205 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Physical AI: จากศูนย์สู่ Microduck",
+    "section": "",
+    "text": "หน้าแรก",
+    "crumbs": [
+      "หน้าแรก"
+    ]
+  },
+  {
+    "objectID": "index.html#แตละตอนเรยนอยางไร",
+    "href": "index.html#แตละตอนเรยนอยางไร",
+    "title": "Physical AI: จากศูนย์สู่ Microduck",
+    "section": "แต่ละตอนเรียนอย่างไร",
+    "text": "แต่ละตอนเรียนอย่างไร\n\n\n🎬\nวิดีโอทฤษฎี — animation วาดมือ เปิดด้วยคำถามจาก Microduck แล้วอธิบายแนวคิดก่อนลงมือเขียนโค้ด\n\n\n💻\nLab — พิมพ์โค้ดทีละบรรทัดใน Jupyter พร้อม notebook ✏️ starter (เติมเฉพาะ TODO) และ ✅ เฉลย\n\n\n📖\nสรุป + หน้าอ่าน — วิดีโอสรุปท้ายตอน และหน้าเว็บนี้ที่มีแผนภาพ ผลลัพธ์จริงจาก lab และคำถามทบทวน\n\n\nทุกคลิปมีเสียงและ subtitle ไทยและอังกฤษ (EP01 เสียงไทยกำลังตามมา) · notebook ทุก lab มีฉบับภาษาอังกฤษ",
+    "crumbs": [
+      "หน้าแรก"
+    ]
+  },
+  {
+    "objectID": "index.html#เสนทางการเรยน",
+    "href": "index.html#เสนทางการเรยน",
+    "title": "Physical AI: จากศูนย์สู่ Microduck",
+    "section": "เส้นทางการเรียน",
+    "text": "เส้นทางการเรียน\nเรียงตาม class ของวิชา ตอนที่ยังไม่เปิดจะทยอยออกทาง playlist\n\n\n\nS1 ร่างกาย หุ่นรู้ได้อย่างไรว่าตัวเองอยู่ตรงไหน และสั่งให้ขยับได้อย่างไร\n\n\nEP01\nPhysical AI คืออะไร พร้อมเรียน sense, think, act · ขับ Microduck ใน simulator\n\n\nEP02\ncoordinate และ rotation เร็วๆ นี้ frame · rotation matrix · forward kinematics\n\n\nEP03\nร่างกายหุ่นยนต์และ MuJoCo เร็วๆ นี้ servo · IMU · control loop 50 Hz · MjModel/MjData\n\n\nEP04\nสร้างหุ่นยนต์ด้วย MJCF เร็วๆ นี้ kinematic tree · mass · friction · model ของ Microduck\n\n\nEP05\nPD control เร็วๆ นี้ feedback · gain · overshoot · ทำไมการยืนสองขาจึงยาก\n\n\n\n\nS2 การเรียนรู้ ถ้าเขียนกฎเองไม่ไหว จะให้หุ่นเรียนจาก reward ได้อย่างไร\n\n\nEP06\nRL และ MDP เร็วๆ นี้ state · action · reward · return · Gymnasium\n\n\nEP07\nValue และ Q-learning เร็วๆ นี้ Bellman · TD · Q-learning บน FrozenLake\n\n\nEP08\nNeural network และ policy gradient เร็วๆ นี้ REINFORCE บน CartPole · variance\n\n\nEP09\nActor-critic และ PPO เร็วๆ นี้ advantage · PPO-Clip · อ่านกราฟ training\n\n\n\n\nS3 Microduck จะทำให้ Microduck เดินได้และเชื่อถือได้อย่างไร\n\n\nEP10\nTrain ให้ Microduck เดิน เร็วๆ นี้ parallel simulation · mjlab · ประเมิน policy\n\n\nEP11\nออกแบบ reward เร็วๆ นี้ shaping · reward hacking · ทำนายก่อนรัน\n\n\nEP12\nSim-to-real เร็วๆ นี้ domain randomization · backlash · ทดสอบ robustness\n\n\nEP13\nDeployment เร็วๆ นี้ ONNX · observation contract · ทดสอบข้าม simulator\n\n\nEP14\nSafety และ ethics เมื่อ AI มีร่างกาย เร็วๆ นี้ ความเสี่ยงที่ simulation ตรวจไม่เจอ",
+    "crumbs": [
+      "หน้าแรก"
+    ]
+  },
+  {
+    "objectID": "index.html#สงทตองม",
+    "href": "index.html#สงทตองม",
+    "title": "Physical AI: จากศูนย์สู่ Microduck",
+    "section": "สิ่งที่ต้องมี",
+    "text": "สิ่งที่ต้องมี\n\n\n🐍\nPython พื้นฐาน — เขียน variable, function และ loop ได้ ไม่ต้องมีพื้นฐานหุ่นยนต์หรือ RL\n\n\n🌐\nBrowser — เปิด notebook ใน Google Colab ได้เลย ไม่ต้องติดตั้งอะไรบนเครื่อง\n\n\n🤖\nไม่ต้องมีหุ่นจริง — ทั้งวิชาเรียนผ่าน simulation lab ของ Microduck (EP10–EP13) ใช้ checkpoint ที่เตรียมไว้ จึงไม่ต้องมี GPU",
+    "crumbs": [
+      "หน้าแรก"
+    ]
+  },
+  {
+    "objectID": "index.html#ตำรา",
+    "href": "index.html#ตำรา",
+    "title": "Physical AI: จากศูนย์สู่ Microduck",
+    "section": "ตำรา",
+    "text": "ตำรา\nเนื้อหาอิงตำรา Foundations of Robotics (Herath และ St-Onge 2022) และ Reinforcement Learning: An Introduction (Sutton และ Barto 2018) ร่วมกับเอกสารของ MuJoCo และ Microduck\n\n\n\n\n\n\nหมายเหตุเกี่ยวกับ license\n\n\n\nเนื้อหาบนเว็บนี้ วิดีโอ และข้อความใน notebook เผยแพร่ภายใต้ CC BY-NC-SA 4.0 ส่วน code ใน notebook ใช้ MIT\nตำราทั้งสองเล่มเผยแพร่ภายใต้ CC BY-NC-ND เว็บนี้จึงอ้างถึงตำราโดยไม่ทำซ้ำหรือดัดแปลงเนื้อหา ภาพ และแผนภาพของตำรา ทุกภาพในวิชานี้ทำขึ้นใหม่ ส่วนภาพหุ่น Microduck render จาก 3D model ของ Pollen Robotics (microduck_rl, CC BY-NC-SA 4.0)",
+    "crumbs": [
+      "หน้าแรก"
+    ]
+  },
+  {
+    "objectID": "index.html#เอกสารอางอง",
+    "href": "index.html#เอกสารอางอง",
+    "title": "Physical AI: จากศูนย์สู่ Microduck",
+    "section": "เอกสารอ้างอิง",
+    "text": "เอกสารอ้างอิง\n\n\nHerath, Damith, and David St-Onge. 2022. Foundations of Robotics: A\nMultidisciplinary Approach with Python and ROS. Springer. https://doi.org/10.1007/978-981-19-1983-1.\n\n\nSutton, Richard S., and Andrew G. Barto. 2018. Reinforcement\nLearning: An Introduction. 2nd ed. MIT Press. http://incompleteideas.net/book/the-book-2nd.html.",
+    "crumbs": [
+      "หน้าแรก"
+    ]
+  },
+  {
+    "objectID": "ep01-what-is-physical-ai/index.html",
+    "href": "ep01-what-is-physical-ai/index.html",
+    "title": "EP01 Physical AI คืออะไร",
+    "section": "",
+    "text": "จุดประสงค์การเรียนรู้\nจบ EP นี้แล้วผู้เรียนจะ",
+    "crumbs": [
+      "Season 1 · ร่างกาย (EP01–EP05)",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>EP01 Physical AI คืออะไร</span>"
+    ]
+  },
+  {
+    "objectID": "ep01-what-is-physical-ai/index.html#จดประสงคการเรยนร",
+    "href": "ep01-what-is-physical-ai/index.html#จดประสงคการเรยนร",
+    "title": "EP01 Physical AI คืออะไร",
+    "section": "",
+    "text": "อธิบายได้ว่า Physical AI ต่างจาก AI ที่ทำงานกับข้อความอย่างไร: intelligence บวกกับร่างกาย\nแยกเครื่องกล (automaton) ที่ขยับตามลำดับเดิม ออกจากหุ่นยนต์ที่รับรู้แล้วปรับตัว\nมองหุ่นยนต์ทุกตัวเป็นวงจร sense → think → act และบอกได้ว่าแต่ละขั้นของ Microduck คืออะไร\nอธิบายว่าทำไมการเดินจึงยากสำหรับหุ่นสองขา และเลือกได้ว่างานไหนควรใช้กฎ, control หรือการเรียนรู้\nใช้ Python, NumPy และ Git บน Colab แล้วเก็บงานขึ้น GitHub ได้\nเปิด model ของ Microduck ใน MuJoCo อ่าน joint, motor และ sensor ของมัน และแสดงได้ว่าการค้างท่าไม่ใช่การทรงตัว",
+    "crumbs": [
+      "Season 1 · ร่างกาย (EP01–EP05)",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>EP01 Physical AI คืออะไร</span>"
+    ]
+  },
+  {
+    "objectID": "ep01-what-is-physical-ai/index.html#เปดทลมในไมถงวนาท",
+    "href": "ep01-what-is-physical-ai/index.html#เปดทลมในไมถงวนาท",
+    "title": "EP01 Physical AI คืออะไร",
+    "section": "เป็ดที่ล้มในไม่ถึงวินาที",
+    "text": "เป็ดที่ล้มในไม่ถึงวินาที\nAI แต่งกลอนให้เราได้ในไม่กี่วินาที แต่ Microduck หุ่นเป็ดสูงราว 25 cm ที่ถูกสั่งให้ค้างท่ายืนใน simulator แล้วปล่อย ไม่ถึงวินาทีก็ล้มนอนอยู่บนพื้น ถ้า AI เก่งภาษาขนาดนั้น ทำไมพอมีร่างกาย แค่ยืนให้อยู่ก็ยากแล้ว? วิชานี้เริ่มจากคำถามนี้ และจบที่เป็ดตัวนี้เดินได้เอง",
+    "crumbs": [
+      "Season 1 · ร่างกาย (EP01–EP05)",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>EP01 Physical AI คืออะไร</span>"
+    ]
+  },
+  {
+    "objectID": "ep01-what-is-physical-ai/index.html#physical-ai-ai-ทมรางกาย",
+    "href": "ep01-what-is-physical-ai/index.html#physical-ai-ai-ทมรางกาย",
+    "title": "EP01 Physical AI คืออะไร",
+    "section": "Physical AI: AI ที่มีร่างกาย",
+    "text": "Physical AI: AI ที่มีร่างกาย\nAI ส่วนใหญ่ที่เราใช้รับข้อมูลเข้าแล้วส่งข้อมูลออก ส่วน Physical AI มีร่างกาย มันต้องรับรู้โลกจริงและลงมือทำในโลกจริง นักหุ่นยนต์ยังนิยามคำว่าหุ่นยนต์ไม่ตรงกัน แต่มีสององค์ประกอบที่พูดถึงตรงกันเกือบทั้งหมด (Herath และ St-Onge 2022, บทที่ 1):\n\nIntelligence — ไม่ได้แปลว่าฉลาดแบบคน แต่คือตัดสินใจได้เองจากข้อมูลที่มีอยู่จำกัด\nEmbodiment — มีร่างกายจริง ไม่ใช่แค่โปรแกรมในคอมพิวเตอร์\n\nร่างกายนี่เองที่ทำให้ทุกอย่างยากขึ้น กลอนที่ผิดไปหนึ่งคำ ลบแล้วเขียนใหม่ได้ แต่หุ่นที่ตัดสินใจผิดกลางก้าวล้มไปแล้ว ย้อนกลับไม่ได้ และมันรอนานก็ไม่ได้: Microduck ตัดสินใจใหม่ 50 ครั้งในทุกหนึ่งวินาที เพราะแรงโน้มถ่วงไม่เคยหยุดพัก\n\nขยับได้ ไม่ได้แปลว่ารับรู้\nเป็ดเคยเป็นเครื่องจักรมาก่อนแล้ว ในศตวรรษที่ 18 นักประดิษฐ์ชาวฝรั่งเศสชื่อโวกองซง (Vaucanson) สร้างเป็ดกลที่ดื่มน้ำ ไซ้น้ำ และร้องได้ (Herath และ St-Onge 2022, หมวด 1.4) แต่มันเป็น automaton เหมือนกล่องดนตรีที่เล่นลำดับเดิมทุกครั้ง ถ้ามีลูกบอลกลิ้งมาชน มันก็ทำท่าเดิมต่อไป เพราะมันไม่รับรู้อะไรเลย ส่วน Microduck วัดร่างกายตัวเองและโลกรอบตัวอยู่ตลอด แล้วเปลี่ยนการกระทำตามสิ่งที่วัดได้ นี่คือเส้นแบ่งระหว่างเครื่องกลที่ขยับได้กับหุ่นยนต์",
+    "crumbs": [
+      "Season 1 · ร่างกาย (EP01–EP05)",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>EP01 Physical AI คืออะไร</span>"
+    ]
+  },
+  {
+    "objectID": "ep01-what-is-physical-ai/index.html#sense-think-act",
+    "href": "ep01-what-is-physical-ai/index.html#sense-think-act",
+    "title": "EP01 Physical AI คืออะไร",
+    "section": "Sense, think, act",
+    "text": "Sense, think, act\nวิชานี้มองหุ่นยนต์ทุกตัวเป็นวงจรสามขั้น:\n\n\n\n\n\n\nflowchart LR\n  S[\"Sense&lt;br/&gt;IMU + มุม joint\"] --&gt; T[\"Think&lt;br/&gt;policy\"] --&gt; A[\"Act&lt;br/&gt;motor 14 ตัว\"]\n  A -- \"โลกเปลี่ยน\" --&gt; S\n\n\n หุ่นยนต์ทุกตัวในวิชานี้ทำงานเป็นวงนี้ Microduck วนห้าสิบรอบต่อวินาที \n\n\n\n\nSense: ใช้ sensor วัดโลกหรือวัดร่างกายของตัวเอง\nThink: ตัดสินใจว่าจะทำอะไร\nAct: ใช้ actuator เช่น motor ทำให้ร่างกายขยับ พอขยับแล้วโลกเปลี่ยน หุ่นจึงต้องวัดใหม่\n\nตัวอย่างใกล้ตัวคือหุ่นดูดฝุ่น: กันชนด้านหน้าถูกกดเพราะชนขาโต๊ะ (sense) มันเลือกเลี้ยวขวา (think) แล้วล้อก็หมุนพาตัวเลี้ยวออกไป (act) Microduck ก็เป็นวงแบบเดียวกันแต่เร็วกว่ามาก: IMU ที่วัดว่าลำตัวเอียงไปทางไหน กับมุมของ joint ทุกข้อ, policy ที่ได้จากการเรียนรู้ และ motor 14 ตัวที่ขา คอ และหัว",
+    "crumbs": [
+      "Season 1 · ร่างกาย (EP01–EP05)",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>EP01 Physical AI คืออะไร</span>"
+    ]
+  },
+  {
+    "objectID": "ep01-what-is-physical-ai/index.html#ทำไมการเดนจงยาก",
+    "href": "ep01-what-is-physical-ai/index.html#ทำไมการเดนจงยาก",
+    "title": "EP01 Physical AI คืออะไร",
+    "section": "ทำไมการเดินจึงยาก",
+    "text": "ทำไมการเดินจึงยาก\nStanford Cart (ปี 1979) ในตำรา หยุดสแกนรอบตัวนาน 15 นาทีทุกครั้งที่วิ่งไปได้หนึ่งเมตร จนข้ามห้องยาว 20 เมตรได้ในห้าชั่วโมง (Herath และ St-Onge 2022, หมวด 1.6) รถหยุดคิดได้ เพราะรถสี่ล้อจอดนิ่งๆ ก็ไม่ล้ม แต่หุ่นสองขาที่หยุดคิดกลางก้าวจะล้มก่อนคิดเสร็จ\nการยืนนิ่งก็ไม่ได้แปลว่าไม่ทำอะไร ลองยืนขาเดียวดู ข้อเท้าจะขยับปรับเล็กๆ อยู่ตลอด สิ่งนี้แหละที่ Microduck ตอนต้นคลิปขาดไป: ทุก joint ค้างท่าเดิม แต่ไม่มีอะไรคอยแก้ตอนลำตัวเริ่มเอียง มันจึงล้มที่ 0.86 วินาที และ Lab 3 จะทำให้ล้มแบบนี้อีกครั้ง",
+    "crumbs": [
+      "Season 1 · ร่างกาย (EP01–EP05)",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>EP01 Physical AI คืออะไร</span>"
+    ]
+  },
+  {
+    "objectID": "ep01-what-is-physical-ai/index.html#สามวธเขยนขน-think",
+    "href": "ep01-what-is-physical-ai/index.html#สามวธเขยนขน-think",
+    "title": "EP01 Physical AI คืออะไร",
+    "section": "สามวิธีเขียนขั้น think",
+    "text": "สามวิธีเขียนขั้น think\n\n\n\nตารางที่ 1.1: สามวิธีเขียนขั้น think\n\n\n\n\n\n\n\n\n\n\nวิธี\nแนวคิด\nเหมาะกับ\n\n\n\n\nเขียนกฎ\nถ้าเกิดสิ่งนี้ ให้ทำสิ่งนั้น\nงานที่รู้ทุกกรณีล่วงหน้า: ไฟเปิดตอนหกโมงเย็น, หุ่นดูดฝุ่นชนแล้วเลี้ยว\n\n\nControl\nวัดว่าห่างจากเป้าหมายแค่ไหน แล้วแก้ตามระยะห่างนั้นตลอดเวลา เหมือนขี่จักรยานให้กลับเข้าเส้น\nคุม joint ให้อยู่ที่มุมเป้าหมาย (EP05)\n\n\nเรียนรู้\nให้หุ่นลองเองนับล้านครั้ง แล้วให้คะแนนเป็น reward ผลที่ได้คือ policy\nงานที่มีกรณีมากเกินกว่าจะเขียนกฎได้ เช่นเดินบนพื้นขรุขระ\n\n\n\n\n\n\npolicy ที่ทำให้ Microduck เดินได้มาจากการเรียนรู้ใน simulator คือแถวที่สามของ ตารางที่ 1.1",
+    "crumbs": [
+      "Season 1 · ร่างกาย (EP01–EP05)",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>EP01 Physical AI คืออะไร</span>"
+    ]
+  },
+  {
+    "objectID": "ep01-what-is-physical-ai/index.html#เสนทางของวชา",
+    "href": "ep01-what-is-physical-ai/index.html#เสนทางของวชา",
+    "title": "EP01 Physical AI คืออะไร",
+    "section": "เส้นทางของวิชา",
+    "text": "เส้นทางของวิชา\n\nร่างกาย (Season 1): หุ่นอยู่ตรงไหน และสั่ง joint ให้ขยับอย่างไร ใน simulator ชื่อ MuJoCo\nการเรียนรู้ (Season 2): เขียน agent ที่เรียนจาก reward ขึ้นมาเอง\nMicroduck (Season 3): train ให้มันเดิน แล้วทดสอบว่ามันทนแค่ไหน\n\nทำไมเริ่มจาก simulator? เหมือนนักบินที่ฝึกในเครื่องฝึกบินจำลอง ล้มกี่ครั้งก็ไม่มีอะไรพัง และเร่งเวลาให้เร็วกว่าโลกจริงได้มาก การพา policy ที่ฝึกแล้วไปใช้กับหุ่นจริง หรือ sim-to-real เป็นขั้นที่ยากอีกขั้นหนึ่ง ปีนี้วิชาจบที่ simulation ซึ่งไม่ใช่ทางลัด เพราะงาน RL ของหุ่นขาจริงเกือบทุกงานก็ train และคัดกรองใน simulation ก่อนเหมือนกัน เครื่องมือของวิชาคือ Python สำหรับเขียน code, Colab สำหรับรัน notebook บน browser และ Git สำหรับเก็บประวัติทุกครั้งที่แก้ code",
+    "crumbs": [
+      "Season 1 · ร่างกาย (EP01–EP05)",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>EP01 Physical AI คืออะไร</span>"
+    ]
+  },
+  {
+    "objectID": "ep01-what-is-physical-ai/index.html#ผลทเหนใน-lab",
+    "href": "ep01-what-is-physical-ai/index.html#ผลทเหนใน-lab",
+    "title": "EP01 Physical AI คืออะไร",
+    "section": "ผลที่เห็นใน Lab",
+    "text": "ผลที่เห็นใน Lab\n\nLab 1 — ขับ Microduck ใน browser: ใน simulator ของ Pollen Robotics ปุ่ม W บอกแค่ว่า “อยากเดินหน้า” ส่วนจะยกเท้าไหนและวางตรงไหน policy เลือกเองจากค่าที่ sensor วัดได้ 50 ครั้งต่อวินาที (บนจอขึ้นว่า CTRL 50HZ) ตอนเตะด้วยปุ่ม Q ขาอีกข้างรับน้ำหนักทั้งตัวไว้ข้างเดียว ส่วนท่านั่งและลุกยืนใช้ policy อีกตัวที่ได้จากการเรียนรู้เหมือนกัน\n\n\nLab 2 — Python, Git และ Colab: ด้วยตัวเลขของ Microduck dt = 1 / 50 ได้การตัดสินใจทุก 0.02 วินาที, 3000 ครั้งต่อนาที และ 43 ครั้งใน 0.86 วินาทีที่มันล้ม NumPy แปลงมุมขาซ้ายในท่ายืนจาก radian เป็นองศาในคำสั่งเดียว: [0, -5, -26.2, -0.3, 26] แล้ว Git เก็บไฟล์ notes เป็น commit แรก ผ่าน working tree → staging area → repository (Herath และ St-Onge 2022, หมวด 4.8)\n\n\nLab 3 — เปิด Microduck ใน MuJoCo แล้วดูมันล้ม: model มี joint 15 ข้อ motor 14 ตัว sensor 6 ตัว joint ที่เกินมาคือ trunk_base_freejoint ซึ่งให้ลำตัวเคลื่อนที่อิสระในโลก จึงไม่มี motor และไม่มี sensor ไหนบอกตำแหน่งเท้าตรงๆ เมื่อค้างท่า STAND ลำตัวค่อยๆ ทรุดจากราว 12 cm แล้วต่ำกว่า 9 cm ที่ 0.86 วินาที ก่อนลงไปอยู่ราว 5 cm พอให้ servo แข็งขึ้น (kp 0.55 → 2.0) จุดต่ำสุดอยู่ที่ 11.5 cm และยืนอยู่ได้ตลอด 1.5 วินาที แต่นั่นแค่ค้างท่าได้ดีขึ้น ยังไม่ได้วัดแล้วแก้ตัวเอง",
+    "crumbs": [
+      "Season 1 · ร่างกาย (EP01–EP05)",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>EP01 Physical AI คืออะไร</span>"
+    ]
+  },
+  {
+    "objectID": "ep01-what-is-physical-ai/index.html#lab",
+    "href": "ep01-what-is-physical-ai/index.html#lab",
+    "title": "EP01 Physical AI คืออะไร",
+    "section": "Lab",
+    "text": "Lab\n\n\n\nตารางที่ 1.2: notebook ของ EP01 (ทุก lab มีส่วนเตรียมตัวของตัวเอง Lab 3 ตรึง MuJoCo 3.17.0 และ model ของ Microduck ที่ commit bae39f5)\n\n\n\n\n\nLab\n✏️ Starter\n✅ เฉลย\n🇬🇧 English\n\n\n\n\nLab 1 — ขับ Microduck ใน browser (simulator)\nColab\nnotebook เดียวกัน (ไม่มี code)\nnotebook\n\n\nLab 2 — Python, Git และ Colab\nColab\nColab\nstarter · solution\n\n\nLab 3 — เปิด Microduck ใน MuJoCo แล้วดูมันล้ม\nColab\nColab\nstarter · solution\n\n\n\n\n\n\nผลลัพธ์ทั้งหมดข้างบนมาจากการรันจริง model และ 3D mesh ของ Microduck เป็นลิขสิทธิ์ของ Pollen Robotics (microduck_rl, mesh ใช้ CC BY-NC-SA 4.0)\nงานส่งของ Class 1: ตารางสังเกตห้าท่าจาก Lab 1, link ของ repo บน GitHub ที่มี commit แรกจาก Lab 2 และสรุปหนึ่งหน้าว่า Microduck ต้องรู้อะไรและทำอะไรบ้างจึงจะเดินได้ (Lab 3)",
+    "crumbs": [
+      "Season 1 · ร่างกาย (EP01–EP05)",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>EP01 Physical AI คืออะไร</span>"
+    ]
+  },
+  {
+    "objectID": "ep01-what-is-physical-ai/index.html#คำถามทบทวน",
+    "href": "ep01-what-is-physical-ai/index.html#คำถามทบทวน",
+    "title": "EP01 Physical AI คืออะไร",
+    "section": "คำถามทบทวน",
+    "text": "คำถามทบทวน\n\nองค์ประกอบสองอย่างอะไรที่ทำให้สิ่งหนึ่งเป็นหุ่นยนต์แทนที่จะเป็นแค่โปรแกรม และทำไมร่างกายจึงทำให้การตัดสินใจยากขึ้น?\nทำไมเป็ดกลของโวกองซงจึงเป็น automaton ไม่ใช่หุ่นยนต์?\nหุ่นดูดฝุ่นชนขาโต๊ะ ขั้น sense, think และ act คืออะไรบ้าง?\nทำไม Stanford Cart หยุดคิด 15 นาทีได้ แต่หุ่นสองขาหยุดกลางก้าวไม่ได้?\nเลือกกฎ, control หรือการเรียนรู้ ให้แต่ละงาน: เปิดไฟตอนหกโมงเย็น, คุม joint ให้อยู่ที่ 30°, เดินบนพื้นขรุขระ\nใน Lab 2 policy ที่ 50 Hz ตัดสินใจกี่ครั้งในหนึ่งชั่วโมง? (แบบฝึกหัดของ Lab 2)\nใน Lab 3 ทำไม trunk_base_freejoint จึงไม่มี motor และทำไม kp 2.0 ยังไม่ใช่การทรงตัวจริง?",
+    "crumbs": [
+      "Season 1 · ร่างกาย (EP01–EP05)",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>EP01 Physical AI คืออะไร</span>"
+    ]
+  },
+  {
+    "objectID": "ep01-what-is-physical-ai/index.html#อานเพม",
+    "href": "ep01-what-is-physical-ai/index.html#อานเพม",
+    "title": "EP01 Physical AI คืออะไร",
+    "section": "อ่านเพิ่ม",
+    "text": "อ่านเพิ่ม\n\nFoundations of Robotics บทที่ 1 (ประวัติของหุ่นยนต์) และ §4.8 (version control) — open access (Herath และ St-Onge 2022)\nเอกสาร MuJoCo: mujoco.readthedocs.io\nMicroduck: simulator บน browser และ microduck_rl ของ Pollen Robotics",
+    "crumbs": [
+      "Season 1 · ร่างกาย (EP01–EP05)",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>EP01 Physical AI คืออะไร</span>"
+    ]
+  },
+  {
+    "objectID": "ep01-what-is-physical-ai/index.html#อางอง",
+    "href": "ep01-what-is-physical-ai/index.html#อางอง",
+    "title": "EP01 Physical AI คืออะไร",
+    "section": "อ้างอิง",
+    "text": "อ้างอิง\n\n\nHerath, Damith, และ David St-Onge. 2022. Foundations of Robotics: A Multidisciplinary Approach with Python and ROS. Springer. https://doi.org/10.1007/978-981-19-1983-1.",
+    "crumbs": [
+      "Season 1 · ร่างกาย (EP01–EP05)",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>EP01 Physical AI คืออะไร</span>"
+    ]
+  }
+]

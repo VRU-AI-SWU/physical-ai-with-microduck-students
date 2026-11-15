@@ -1,0 +1,205 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Physical AI: From Zero to Microduck",
+    "section": "",
+    "text": "Home",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#how-each-episode-works",
+    "href": "index.html#how-each-episode-works",
+    "title": "Physical AI: From Zero to Microduck",
+    "section": "How each episode works",
+    "text": "How each episode works\n\n\n🎬\nTheory video — a hand-drawn animation that opens with a question from Microduck and explains the idea before any code\n\n\n💻\nLabs — code typed line by line in Jupyter, with a ✏️ starter notebook (fill in the TODOs) and a ✅ solution\n\n\n📖\nRecap + reading page — a recap video and this site’s page with diagrams, real lab results, and review questions\n\n\nEvery video has English and Thai audio and subtitles (EP01: Thai audio coming) · every lab has an English notebook",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#learning-path",
+    "href": "index.html#learning-path",
+    "title": "Physical AI: From Zero to Microduck",
+    "section": "Learning path",
+    "text": "Learning path\nIn the order of the course’s classes. Episodes not yet released will arrive in the playlist.\n\n\n\nS1 The Body How does a robot know where it is, and how do we make it move?\n\n\nEP01\nWhat is Physical AI? ready sense, think, act · driving Microduck in a simulator\n\n\nEP02\nCoordinates and rotation coming soon frames · rotation matrices · forward kinematics\n\n\nEP03\nThe robot body and MuJoCo coming soon servos · IMU · the 50 Hz control loop · MjModel/MjData\n\n\nEP04\nBuilding a robot with MJCF coming soon kinematic trees · mass · friction · the Microduck model\n\n\nEP05\nPD control coming soon feedback · gains · overshoot · why standing on two legs is hard\n\n\n\n\nS2 Learning If we can’t write the rules by hand, how can a robot learn from reward?\n\n\nEP06\nRL and MDPs coming soon state · action · reward · return · Gymnasium\n\n\nEP07\nValue and Q-learning coming soon Bellman · TD · Q-learning on FrozenLake\n\n\nEP08\nNeural networks and policy gradient coming soon REINFORCE on CartPole · variance\n\n\nEP09\nActor-critic and PPO coming soon advantage · PPO-Clip · reading training plots\n\n\n\n\nS3 Microduck How do we make Microduck walk, reliably?\n\n\nEP10\nTraining Microduck to walk coming soon parallel simulation · mjlab · evaluating a policy\n\n\nEP11\nReward design coming soon shaping · reward hacking · predict before you run\n\n\nEP12\nSim-to-real coming soon domain randomization · backlash · robustness tests\n\n\nEP13\nDeployment coming soon ONNX · the observation contract · cross-simulator tests\n\n\nEP14\nSafety and ethics when AI has a body coming soon risks that simulation can’t catch",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#what-you-need",
+    "href": "index.html#what-you-need",
+    "title": "Physical AI: From Zero to Microduck",
+    "section": "What you need",
+    "text": "What you need\n\n\n🐍\nBasic Python — variables, functions, and loops; no robotics or RL background needed\n\n\n🌐\nA browser — open the notebooks in Google Colab; nothing to install\n\n\n🤖\nNo physical robot — the whole course runs in simulation; the Microduck labs (EP10–EP13) use prepared checkpoints, so no GPU is needed",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#textbooks",
+    "href": "index.html#textbooks",
+    "title": "Physical AI: From Zero to Microduck",
+    "section": "Textbooks",
+    "text": "Textbooks\nThe course follows Foundations of Robotics (Herath and St-Onge 2022) and Reinforcement Learning: An Introduction (Sutton and Barto 2018), together with the MuJoCo and Microduck documentation.\n\n\n\n\n\n\nNoteAbout the license\n\n\n\nThis site, the videos, and the notebook text are released under CC BY-NC-SA 4.0; the code in the notebooks is under MIT.\nBoth textbooks are licensed CC BY-NC-ND, so this site cites them without reproducing or adapting their text, figures, or diagrams; every image in the course is made from scratch. Images of the Microduck robot are rendered from Pollen Robotics’ 3D models (microduck_rl, CC BY-NC-SA 4.0).",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#references",
+    "href": "index.html#references",
+    "title": "Physical AI: From Zero to Microduck",
+    "section": "References",
+    "text": "References\n\n\nHerath, Damith, and David St-Onge. 2022. Foundations of Robotics: A\nMultidisciplinary Approach with Python and ROS. Springer. https://doi.org/10.1007/978-981-19-1983-1.\n\n\nSutton, Richard S., and Andrew G. Barto. 2018. Reinforcement\nLearning: An Introduction. 2nd ed. MIT Press. http://incompleteideas.net/book/the-book-2nd.html.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "ep01-what-is-physical-ai/index.html",
+    "href": "ep01-what-is-physical-ai/index.html",
+    "title": "EP01 What is Physical AI?",
+    "section": "",
+    "text": "Learning objectives\nAfter this episode you will be able to",
+    "crumbs": [
+      "Season 1 · The Body (EP01–EP05)",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>EP01 What is Physical AI?</span>"
+    ]
+  },
+  {
+    "objectID": "ep01-what-is-physical-ai/index.html#learning-objectives",
+    "href": "ep01-what-is-physical-ai/index.html#learning-objectives",
+    "title": "EP01 What is Physical AI?",
+    "section": "",
+    "text": "Explain what makes Physical AI different from AI that only works with text: intelligence plus a body\nTell an automaton that moves on a fixed sequence from a robot that senses and adapts\nDescribe any robot as a sense → think → act loop, and name Microduck’s parts of that loop\nExplain why walking is hard for a two-legged robot, and choose between rules, control and learning for a task\nRun Python, NumPy and Git on Colab and save your work to GitHub\nOpen Microduck’s model in MuJoCo, read its joints, motors and sensors, and show that holding a pose is not balancing",
+    "crumbs": [
+      "Season 1 · The Body (EP01–EP05)",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>EP01 What is Physical AI?</span>"
+    ]
+  },
+  {
+    "objectID": "ep01-what-is-physical-ai/index.html#a-duck-that-falls-in-under-a-second",
+    "href": "ep01-what-is-physical-ai/index.html#a-duck-that-falls-in-under-a-second",
+    "title": "EP01 What is Physical AI?",
+    "section": "A duck that falls in under a second",
+    "text": "A duck that falls in under a second\nAn AI can write a poem in a few seconds. Microduck, a robot duck about 25 cm tall, was told to hold its standing pose in a simulator and then let go. In less than a second it was lying on the floor. If AI is so good with language, why is staying upright so hard once it has a body? This course starts with that question and ends with this duck walking on its own.",
+    "crumbs": [
+      "Season 1 · The Body (EP01–EP05)",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>EP01 What is Physical AI?</span>"
+    ]
+  },
+  {
+    "objectID": "ep01-what-is-physical-ai/index.html#physical-ai-ai-with-a-body",
+    "href": "ep01-what-is-physical-ai/index.html#physical-ai-ai-with-a-body",
+    "title": "EP01 What is Physical AI?",
+    "section": "Physical AI: AI with a body",
+    "text": "Physical AI: AI with a body\nMost of the AI we use takes data in and sends data out. Physical AI has a body: it senses the real world and acts in it. Roboticists don’t agree on one definition of a robot, but two ingredients come up again and again (Herath and St-Onge 2022, Ch. 1):\n\nIntelligence — not human-like cleverness, but making decisions on its own from the limited information it has\nEmbodiment — a real physical body, not only a program in a computer\n\nThe body is what makes everything harder. A poem with a wrong word can be erased and rewritten. A robot that decides wrongly mid-step has already fallen, and there is no undo. It can’t take its time either: Microduck makes a new decision 50 times every second, because gravity never pauses.\n\nMoving is not the same as sensing\nDucks have been machines before. In the 18th century the French inventor Vaucanson built a mechanical duck that drank, dabbled and quacked (Herath and St-Onge 2022, sec. 1.4). It was an automaton: like a music box, it played the same sequence every time. Roll a ball into it and it carries on with the same motion, because it senses nothing. Microduck measures its own body and the world all the time and changes what it does based on what it measures. That is the line between a machine that moves and a robot.",
+    "crumbs": [
+      "Season 1 · The Body (EP01–EP05)",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>EP01 What is Physical AI?</span>"
+    ]
+  },
+  {
+    "objectID": "ep01-what-is-physical-ai/index.html#sense-think-act",
+    "href": "ep01-what-is-physical-ai/index.html#sense-think-act",
+    "title": "EP01 What is Physical AI?",
+    "section": "Sense, think, act",
+    "text": "Sense, think, act\nThis course looks at every robot as a loop of three steps:\n\n\n\n\n\n\nflowchart LR\n  S[\"Sense&lt;br/&gt;IMU + joint angles\"] --&gt; T[\"Think&lt;br/&gt;the policy\"] --&gt; A[\"Act&lt;br/&gt;14 motors\"]\n  A -- \"the world changes\" --&gt; S\n\n\n Every robot in this course runs this loop. Microduck runs it 50 times a second. \n\n\n\n\nSense: sensors measure the world or the robot’s own body\nThink: decide what to do\nAct: actuators, such as motors, move the body; the world changes, so the robot measures again\n\nA robot vacuum at home is the everyday example: the front bumper is pressed by a table leg (sense), it chooses to turn right (think), the wheels turn it away (act). Microduck runs the same loop much faster: an IMU that measures which way the body tilts plus the angle of every joint, a learned policy, and 14 motors in the legs, neck and head.",
+    "crumbs": [
+      "Season 1 · The Body (EP01–EP05)",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>EP01 What is Physical AI?</span>"
+    ]
+  },
+  {
+    "objectID": "ep01-what-is-physical-ai/index.html#why-walking-is-hard",
+    "href": "ep01-what-is-physical-ai/index.html#why-walking-is-hard",
+    "title": "EP01 What is Physical AI?",
+    "section": "Why walking is hard",
+    "text": "Why walking is hard\nThe textbook’s Stanford Cart (1979) stopped to scan its surroundings for 15 minutes after every metre and crossed a 20-metre room in five hours (Herath and St-Onge 2022, sec. 1.6). A cart can stop and think, because a four-wheeled vehicle that stands still doesn’t fall. A two-legged robot that stops to think mid-step falls before it has finished thinking.\nStanding still isn’t doing nothing, either. Stand on one leg and your ankle keeps making small corrections. That is exactly what Microduck lacked in the opening shot: every joint held its pose, nothing corrected the body as it started to tilt, and it fell after 0.86 s. Lab 3 reproduces this fall.",
+    "crumbs": [
+      "Season 1 · The Body (EP01–EP05)",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>EP01 What is Physical AI?</span>"
+    ]
+  },
+  {
+    "objectID": "ep01-what-is-physical-ai/index.html#three-ways-to-write-think",
+    "href": "ep01-what-is-physical-ai/index.html#three-ways-to-write-think",
+    "title": "EP01 What is Physical AI?",
+    "section": "Three ways to write “think”",
+    "text": "Three ways to write “think”\n\n\n\nTable 1.1: Three ways to write the think step\n\n\n\n\n\n\n\n\n\n\nWay\nIdea\nGood for\n\n\n\n\nRules\nif this happens, do that\ntasks where every case is known: a light that turns on at 6 pm, a vacuum that turns when it bumps\n\n\nControl\nmeasure how far you are from the goal and keep correcting by that distance — like steering a bicycle back to a line\nkeeping a joint at a target angle (EP05)\n\n\nLearning\nlet the robot try millions of times and score it with a reward; the result is a policy\ntasks with too many cases to write down, like walking on rough ground\n\n\n\n\n\n\nMicroduck’s walking policy was learned in a simulator, the third row of Table 1.1.",
+    "crumbs": [
+      "Season 1 · The Body (EP01–EP05)",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>EP01 What is Physical AI?</span>"
+    ]
+  },
+  {
+    "objectID": "ep01-what-is-physical-ai/index.html#the-course-path",
+    "href": "ep01-what-is-physical-ai/index.html#the-course-path",
+    "title": "EP01 What is Physical AI?",
+    "section": "The course path",
+    "text": "The course path\n\nThe body (Season 1): where is the robot, and how do we make a joint move — in the MuJoCo simulator\nLearning (Season 2): write agents that learn from reward\nMicroduck (Season 3): train it to walk and test how robust it is\n\nWhy a simulator first? Like a pilot in a flight simulator, the robot can fall as often as it likes and nothing breaks, and time runs much faster than in the real world. Moving a trained policy onto a real robot, sim-to-real, is a hard step of its own. This year the course ends in simulation; that is not a shortcut, since nearly all RL work on real legged robots is trained and screened in simulation first. The tools: Python to write code, Colab to run notebooks in the browser, and Git to keep a history of every change.",
+    "crumbs": [
+      "Season 1 · The Body (EP01–EP05)",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>EP01 What is Physical AI?</span>"
+    ]
+  },
+  {
+    "objectID": "ep01-what-is-physical-ai/index.html#what-the-labs-showed",
+    "href": "ep01-what-is-physical-ai/index.html#what-the-labs-showed",
+    "title": "EP01 What is Physical AI?",
+    "section": "What the labs showed",
+    "text": "What the labs showed\n\nLab 1 — Drive Microduck in the browser: in Pollen Robotics’ simulator the W key only says “I want to go forward”; which foot to lift and where to put it, the policy decides from its sensors, 50 times a second (CTRL 50HZ on screen). Kicking with Q, the other leg alone carries the body; sitting and standing use a second learned policy.\n\n\nLab 2 — Python, Git and Colab: with Microduck’s numbers, dt = 1 / 50 gives one decision every 0.02 s, 3000 decisions per minute, and 43 decisions in the 0.86 s it took to fall. NumPy converts the left leg’s standing pose from radians to degrees in one command: [0, -5, -26.2, -0.3, 26]. Git saves the notes as a first commit, through working tree → staging area → repository (Herath and St-Onge 2022, sec. 4.8).\n\n\nLab 3 — Open Microduck in MuJoCo and watch it fall: the model has 15 joints, 14 motors and 6 sensors. The extra joint, trunk_base_freejoint, lets the trunk move freely in the world and has no motor. No sensor says directly where the feet are. Holding the STAND pose, the trunk sinks slowly from about 12 cm, then drops below 9 cm at 0.86 s and lands at about 5 cm. With stiffer servos (kp 0.55 → 2.0) its lowest point is 11.5 cm and it stays up for the whole 1.5 s — but that is holding the pose better, not measuring and correcting.",
+    "crumbs": [
+      "Season 1 · The Body (EP01–EP05)",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>EP01 What is Physical AI?</span>"
+    ]
+  },
+  {
+    "objectID": "ep01-what-is-physical-ai/index.html#lab",
+    "href": "ep01-what-is-physical-ai/index.html#lab",
+    "title": "EP01 What is Physical AI?",
+    "section": "Labs",
+    "text": "Labs\n\n\n\nTable 1.2: EP01 notebooks (each lab has its own setup section; Lab 3 pins MuJoCo 3.17.0 and the Microduck model at commit bae39f5)\n\n\n\n\n\nLab\n✏️ Starter\n✅ Solution\n\n\n\n\nLab 1 — Drive Microduck in the browser (simulator)\nColab\nsame notebook (no code)\n\n\nLab 2 — Python, Git and Colab\nColab\nColab\n\n\nLab 3 — Open Microduck in MuJoCo and watch it fall\nColab\nColab\n\n\n\n\n\n\nAll results above come from real runs. The Microduck model and its 3D meshes are © Pollen Robotics (microduck_rl; meshes CC BY-NC-SA 4.0).\nClass 1 assignments: the five-move observation table from Lab 1, the link to your GitHub repo with a first commit from Lab 2, and a one-page summary of what Microduck needs to know and do in order to walk (Lab 3).",
+    "crumbs": [
+      "Season 1 · The Body (EP01–EP05)",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>EP01 What is Physical AI?</span>"
+    ]
+  },
+  {
+    "objectID": "ep01-what-is-physical-ai/index.html#review-questions",
+    "href": "ep01-what-is-physical-ai/index.html#review-questions",
+    "title": "EP01 What is Physical AI?",
+    "section": "Review questions",
+    "text": "Review questions\n\nWhat two ingredients make something a robot rather than a program, and why does the body make decisions harder?\nWhy was Vaucanson’s duck an automaton and not a robot?\nFor a robot vacuum, name the sense, think and act steps when it bumps into a table leg.\nWhy could the Stanford Cart stop for 15 minutes when a biped can’t stop mid-step?\nFor each task, pick rules, control or learning: a light at 6 pm; holding a joint at 30°; walking on rough ground.\nIn Lab 2, how many decisions does a 50 Hz policy make in one hour? (The Lab 2 exercise.)\nIn Lab 3, why doesn’t trunk_base_freejoint have a motor, and why isn’t kp 2.0 real balancing?",
+    "crumbs": [
+      "Season 1 · The Body (EP01–EP05)",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>EP01 What is Physical AI?</span>"
+    ]
+  },
+  {
+    "objectID": "ep01-what-is-physical-ai/index.html#further-reading",
+    "href": "ep01-what-is-physical-ai/index.html#further-reading",
+    "title": "EP01 What is Physical AI?",
+    "section": "Further reading",
+    "text": "Further reading\n\nFoundations of Robotics, Ch. 1 (the history of robots) and §4.8 (version control) — open access (Herath and St-Onge 2022)\nMuJoCo documentation: mujoco.readthedocs.io\nMicroduck: Pollen Robotics’ browser simulator and microduck_rl",
+    "crumbs": [
+      "Season 1 · The Body (EP01–EP05)",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>EP01 What is Physical AI?</span>"
+    ]
+  },
+  {
+    "objectID": "ep01-what-is-physical-ai/index.html#references",
+    "href": "ep01-what-is-physical-ai/index.html#references",
+    "title": "EP01 What is Physical AI?",
+    "section": "References",
+    "text": "References\n\n\nHerath, Damith, and David St-Onge. 2022. Foundations of Robotics: A Multidisciplinary Approach with Python and ROS. Springer. https://doi.org/10.1007/978-981-19-1983-1.",
+    "crumbs": [
+      "Season 1 · The Body (EP01–EP05)",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>EP01 What is Physical AI?</span>"
+    ]
+  }
+]

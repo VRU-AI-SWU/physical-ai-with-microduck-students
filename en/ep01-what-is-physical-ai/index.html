@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.11.9">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>EP01 What is Physical AI? – Physical AI: From Zero to Microduck</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../index.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-163ef9275c2a66b11cebe983e0e85afc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../../assets/home.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" aria-label="Toolbar">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ep01-what-is-physical-ai/index.html">Season 1 · The Body (EP01–EP05)</a></li><li class="breadcrumb-item"><a href="../ep01-what-is-physical-ai/index.html"><span class="chapter-title">EP01 What is Physical AI?</span></a></li></ol></nav>
+        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Site">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Physical AI: From Zero to Microduck</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-1-label">Season 1 · The Body (EP01–EP05)</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ep01-what-is-physical-ai/index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">EP01 What is Physical AI?</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#a-duck-that-falls-in-under-a-second" id="toc-a-duck-that-falls-in-under-a-second" class="nav-link" data-scroll-target="#a-duck-that-falls-in-under-a-second">A duck that falls in under a second</a></li>
+  <li><a href="#physical-ai-ai-with-a-body" id="toc-physical-ai-ai-with-a-body" class="nav-link" data-scroll-target="#physical-ai-ai-with-a-body">Physical AI: AI with a body</a>
+  <ul class="collapse">
+  <li><a href="#moving-is-not-the-same-as-sensing" id="toc-moving-is-not-the-same-as-sensing" class="nav-link" data-scroll-target="#moving-is-not-the-same-as-sensing">Moving is not the same as sensing</a></li>
+  </ul></li>
+  <li><a href="#sense-think-act" id="toc-sense-think-act" class="nav-link" data-scroll-target="#sense-think-act">Sense, think, act</a></li>
+  <li><a href="#why-walking-is-hard" id="toc-why-walking-is-hard" class="nav-link" data-scroll-target="#why-walking-is-hard">Why walking is hard</a></li>
+  <li><a href="#three-ways-to-write-think" id="toc-three-ways-to-write-think" class="nav-link" data-scroll-target="#three-ways-to-write-think">Three ways to write “think”</a></li>
+  <li><a href="#the-course-path" id="toc-the-course-path" class="nav-link" data-scroll-target="#the-course-path">The course path</a></li>
+  <li><a href="#what-the-labs-showed" id="toc-what-the-labs-showed" class="nav-link" data-scroll-target="#what-the-labs-showed">What the labs showed</a></li>
+  <li><a href="#lab" id="toc-lab" class="nav-link" data-scroll-target="#lab">Labs</a></li>
+  <li><a href="#review-questions" id="toc-review-questions" class="nav-link" data-scroll-target="#review-questions">Review questions</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content" tabindex="-1">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ep01-what-is-physical-ai/index.html">Season 1 · The Body (EP01–EP05)</a></li><li class="breadcrumb-item"><a href="../ep01-what-is-physical-ai/index.html"><span class="chapter-title">EP01 What is Physical AI?</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">EP01 What is Physical AI?</span></h1>
+<p class="subtitle lead">Class 1 · FR Ch. 1, §4.8 · AI with a body · Sense, think, act · Rules, control, learning · Python, Git and Colab · Microduck in MuJoCo</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>🎬 Videos and notebooks
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Videos:</strong> theory (≈8 min) → Labs 1–3 (4–8 min) → recap (≈3 min) in the playlist <em>Physical AI with Microduck</em> on the <a href="https://www.youtube.com/@cogito-space">Cogito-Space channel</a>, in English with English and Thai subtitles (switch in ⚙️); the Thai audio track is coming</li>
+<li><strong>Notebooks:</strong> English notebooks for every lab in the <a href="#lab">Labs</a> table: an observation table for Lab 1, a ✏️ starter (fill in the TODOs) and ✅ solution for Labs 2–3</li>
+<li><strong>You need:</strong> a browser for Lab 1; Google Colab (or Python 3.10+) for Labs 2–3; a GitHub account for the Lab 2 assignment</li>
+</ul>
+</div>
+</div>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<p>After this episode you will be able to</p>
+<ol type="1">
+<li>Explain what makes Physical AI different from AI that only works with text: intelligence plus a body</li>
+<li>Tell an automaton that moves on a fixed sequence from a robot that senses and adapts</li>
+<li>Describe any robot as a sense → think → act loop, and name Microduck’s parts of that loop</li>
+<li>Explain why walking is hard for a two-legged robot, and choose between rules, control and learning for a task</li>
+<li>Run Python, NumPy and Git on Colab and save your work to GitHub</li>
+<li>Open Microduck’s model in MuJoCo, read its joints, motors and sensors, and show that holding a pose is not balancing</li>
+</ol>
+</section>
+<section id="a-duck-that-falls-in-under-a-second" class="level2">
+<h2 class="anchored" data-anchor-id="a-duck-that-falls-in-under-a-second">A duck that falls in under a second</h2>
+<p>An AI can write a poem in a few seconds. Microduck, a robot duck about 25 cm tall, was told to hold its standing pose in a simulator and then let go. In less than a second it was lying on the floor. If AI is so good with language, why is staying upright so hard once it has a body? This course starts with that question and ends with this duck walking on its own.</p>
+</section>
+<section id="physical-ai-ai-with-a-body" class="level2">
+<h2 class="anchored" data-anchor-id="physical-ai-ai-with-a-body">Physical AI: AI with a body</h2>
+<p>Most of the AI we use takes data in and sends data out. <strong>Physical AI</strong> has a body: it senses the real world and acts in it. Roboticists don’t agree on one definition of a robot, but two ingredients come up again and again <span class="citation" data-cites="herath2022foundations">(<a href="../index.html#ref-herath2022foundations" role="doc-biblioref">Herath and St-Onge 2022</a>, Ch. 1)</span>:</p>
+<ul>
+<li><strong>Intelligence</strong> — not human-like cleverness, but making decisions on its own from the limited information it has</li>
+<li><strong>Embodiment</strong> — a real physical body, not only a program in a computer</li>
+</ul>
+<p>The body is what makes everything harder. A poem with a wrong word can be erased and rewritten. A robot that decides wrongly mid-step has already fallen, and there is no undo. It can’t take its time either: Microduck makes a new decision <strong>50 times every second</strong>, because gravity never pauses.</p>
+<section id="moving-is-not-the-same-as-sensing" class="level3">
+<h3 class="anchored" data-anchor-id="moving-is-not-the-same-as-sensing">Moving is not the same as sensing</h3>
+<p>Ducks have been machines before. In the 18th century the French inventor Vaucanson built a mechanical duck that drank, dabbled and quacked <span class="citation" data-cites="herath2022foundations">(<a href="../index.html#ref-herath2022foundations" role="doc-biblioref">Herath and St-Onge 2022, sec. 1.4</a>)</span>. It was an <strong>automaton</strong>: like a music box, it played the same sequence every time. Roll a ball into it and it carries on with the same motion, because it senses nothing. Microduck measures its own body and the world all the time and changes what it does based on what it measures. That is the line between a machine that moves and a robot.</p>
+</section>
+</section>
+<section id="sense-think-act" class="level2">
+<h2 class="anchored" data-anchor-id="sense-think-act">Sense, think, act</h2>
+<p>This course looks at every robot as a loop of three steps:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+
+<pre class="mermaid mermaid-js">flowchart LR
+  S["Sense&lt;br/&gt;IMU + joint angles"] --&gt; T["Think&lt;br/&gt;the policy"] --&gt; A["Act&lt;br/&gt;14 motors"]
+  A -- "the world changes" --&gt; S
+</pre>
+</div>
+<p></p><figcaption> Every robot in this course runs this loop. Microduck runs it 50 times a second.</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Sense:</strong> sensors measure the world or the robot’s own body</li>
+<li><strong>Think:</strong> decide what to do</li>
+<li><strong>Act:</strong> actuators, such as motors, move the body; the world changes, so the robot measures again</li>
+</ul>
+<p>A robot vacuum at home is the everyday example: the front bumper is pressed by a table leg (sense), it chooses to turn right (think), the wheels turn it away (act). Microduck runs the same loop much faster: an IMU that measures which way the body tilts plus the angle of every joint, a learned <strong>policy</strong>, and 14 motors in the legs, neck and head.</p>
+</section>
+<section id="why-walking-is-hard" class="level2">
+<h2 class="anchored" data-anchor-id="why-walking-is-hard">Why walking is hard</h2>
+<p>The textbook’s Stanford Cart (1979) stopped to scan its surroundings for 15 minutes after every metre and crossed a 20-metre room in five hours <span class="citation" data-cites="herath2022foundations">(<a href="../index.html#ref-herath2022foundations" role="doc-biblioref">Herath and St-Onge 2022, sec. 1.6</a>)</span>. A cart can stop and think, because a four-wheeled vehicle that stands still doesn’t fall. A two-legged robot that stops to think mid-step falls before it has finished thinking.</p>
+<p>Standing still isn’t doing nothing, either. Stand on one leg and your ankle keeps making small corrections. That is exactly what Microduck lacked in the opening shot: every joint held its pose, nothing corrected the body as it started to tilt, and it fell after <strong>0.86 s</strong>. Lab 3 reproduces this fall.</p>
+</section>
+<section id="three-ways-to-write-think" class="level2">
+<h2 class="anchored" data-anchor-id="three-ways-to-write-think">Three ways to write “think”</h2>
+<div id="tbl-think" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-think-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1.1: Three ways to write the think step
+</figcaption>
+<div aria-describedby="tbl-think-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Way</th>
+<th>Idea</th>
+<th>Good for</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Rules</strong></td>
+<td>if this happens, do that</td>
+<td>tasks where every case is known: a light that turns on at 6 pm, a vacuum that turns when it bumps</td>
+</tr>
+<tr class="even">
+<td><strong>Control</strong></td>
+<td>measure how far you are from the goal and keep correcting by that distance — like steering a bicycle back to a line</td>
+<td>keeping a joint at a target angle (EP05)</td>
+</tr>
+<tr class="odd">
+<td><strong>Learning</strong></td>
+<td>let the robot try millions of times and score it with a <strong>reward</strong>; the result is a <strong>policy</strong></td>
+<td>tasks with too many cases to write down, like walking on rough ground</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Microduck’s walking policy was learned in a simulator, the third row of <a href="#tbl-think" class="quarto-xref">Table&nbsp;<span>1.1</span></a>.</p>
+</section>
+<section id="the-course-path" class="level2">
+<h2 class="anchored" data-anchor-id="the-course-path">The course path</h2>
+<ol type="1">
+<li><strong>The body</strong> (Season 1): where is the robot, and how do we make a joint move — in the MuJoCo simulator</li>
+<li><strong>Learning</strong> (Season 2): write agents that learn from reward</li>
+<li><strong>Microduck</strong> (Season 3): train it to walk and test how robust it is</li>
+</ol>
+<p>Why a simulator first? Like a pilot in a flight simulator, the robot can fall as often as it likes and nothing breaks, and time runs much faster than in the real world. Moving a trained policy onto a real robot, <strong>sim-to-real</strong>, is a hard step of its own. This year the course ends in simulation; that is not a shortcut, since nearly all RL work on real legged robots is trained and screened in simulation first. The tools: <strong>Python</strong> to write code, <strong>Colab</strong> to run notebooks in the browser, and <strong>Git</strong> to keep a history of every change.</p>
+</section>
+<section id="what-the-labs-showed" class="level2">
+<h2 class="anchored" data-anchor-id="what-the-labs-showed">What the labs showed</h2>
+<blockquote class="blockquote">
+<p><strong>Lab 1 — Drive Microduck in the browser:</strong> in Pollen Robotics’ simulator the W key only says “I want to go forward”; which foot to lift and where to put it, the policy decides from its sensors, 50 times a second (CTRL 50HZ on screen). Kicking with Q, the other leg alone carries the body; sitting and standing use a second learned policy.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>Lab 2 — Python, Git and Colab:</strong> with Microduck’s numbers, <code>dt = 1 / 50</code> gives one decision every <strong>0.02 s</strong>, <strong>3000</strong> decisions per minute, and <strong>43</strong> decisions in the 0.86 s it took to fall. NumPy converts the left leg’s standing pose from radians to degrees in one command: <code>[0, -5, -26.2, -0.3, 26]</code>. Git saves the notes as a first commit, through working tree → staging area → repository <span class="citation" data-cites="herath2022foundations">(<a href="../index.html#ref-herath2022foundations" role="doc-biblioref">Herath and St-Onge 2022, sec. 4.8</a>)</span>.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>Lab 3 — Open Microduck in MuJoCo and watch it fall:</strong> the model has <strong>15 joints, 14 motors and 6 sensors</strong>. The extra joint, <code>trunk_base_freejoint</code>, lets the trunk move freely in the world and has no motor. No sensor says directly where the feet are. Holding the STAND pose, the trunk sinks slowly from about 12 cm, then drops below 9 cm at <strong>0.86 s</strong> and lands at about 5 cm. With stiffer servos (kp 0.55 → 2.0) its lowest point is <strong>11.5 cm</strong> and it stays up for the whole 1.5 s — but that is holding the pose better, not measuring and correcting.</p>
+</blockquote>
+</section>
+<section id="lab" class="level2">
+<h2 class="anchored" data-anchor-id="lab">Labs</h2>
+<div id="tbl-labs" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-labs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1.2: EP01 notebooks (each lab has its own setup section; Lab 3 pins MuJoCo 3.17.0 and the Microduck model at commit bae39f5)
+</figcaption>
+<div aria-describedby="tbl-labs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Lab</th>
+<th>✏️ Starter</th>
+<th>✅ Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Lab 1 — Drive Microduck in the browser (<a href="https://pollen-robotics-microduck-simulator.hf.space/">simulator</a>)</td>
+<td><a href="https://colab.research.google.com/github/VRU-AI-SWU/physical-ai-with-microduck-students/blob/main/ep01-what-is-physical-ai/ep01-lab1-browser-sim.en.ipynb">Colab</a></td>
+<td>same notebook (no code)</td>
+</tr>
+<tr class="even">
+<td>Lab 2 — Python, Git and Colab</td>
+<td><a href="https://colab.research.google.com/github/VRU-AI-SWU/physical-ai-with-microduck-students/blob/main/ep01-what-is-physical-ai/ep01-lab2-python-git-colab.en.student.ipynb">Colab</a></td>
+<td><a href="https://colab.research.google.com/github/VRU-AI-SWU/physical-ai-with-microduck-students/blob/main/ep01-what-is-physical-ai/ep01-lab2-python-git-colab.en.ipynb">Colab</a></td>
+</tr>
+<tr class="odd">
+<td>Lab 3 — Open Microduck in MuJoCo and watch it fall</td>
+<td><a href="https://colab.research.google.com/github/VRU-AI-SWU/physical-ai-with-microduck-students/blob/main/ep01-what-is-physical-ai/ep01-lab3-meet-microduck.en.student.ipynb">Colab</a></td>
+<td><a href="https://colab.research.google.com/github/VRU-AI-SWU/physical-ai-with-microduck-students/blob/main/ep01-what-is-physical-ai/ep01-lab3-meet-microduck.en.ipynb">Colab</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>All results above come from real runs. The Microduck model and its 3D meshes are © Pollen Robotics (<a href="https://github.com/pollen-robotics/microduck_rl">microduck_rl</a>; meshes CC BY-NC-SA 4.0).</p>
+<p><strong>Class 1 assignments:</strong> the five-move observation table from Lab 1, the link to your GitHub repo with a first commit from Lab 2, and a one-page summary of what Microduck needs to know and do in order to walk (Lab 3).</p>
+</section>
+<section id="review-questions" class="level2">
+<h2 class="anchored" data-anchor-id="review-questions">Review questions</h2>
+<ol type="1">
+<li>What two ingredients make something a robot rather than a program, and why does the body make decisions harder?</li>
+<li>Why was Vaucanson’s duck an automaton and not a robot?</li>
+<li>For a robot vacuum, name the sense, think and act steps when it bumps into a table leg.</li>
+<li>Why could the Stanford Cart stop for 15 minutes when a biped can’t stop mid-step?</li>
+<li>For each task, pick rules, control or learning: a light at 6 pm; holding a joint at 30°; walking on rough ground.</li>
+<li>In Lab 2, how many decisions does a 50 Hz policy make in one hour? (The Lab 2 exercise.)</li>
+<li>In Lab 3, why doesn’t <code>trunk_base_freejoint</code> have a motor, and why isn’t kp 2.0 real balancing?</li>
+</ol>
+</section>
+<section id="further-reading" class="level2">
+<h2 class="anchored" data-anchor-id="further-reading">Further reading</h2>
+<ul>
+<li><strong>Foundations of Robotics</strong>, Ch. 1 (the history of robots) and §4.8 (version control) — open access <span class="citation" data-cites="herath2022foundations">(<a href="../index.html#ref-herath2022foundations" role="doc-biblioref">Herath and St-Onge 2022</a>)</span></li>
+<li><strong>MuJoCo documentation:</strong> <a href="https://mujoco.readthedocs.io">mujoco.readthedocs.io</a></li>
+<li><strong>Microduck:</strong> Pollen Robotics’ <a href="https://huggingface.co/spaces/pollen-robotics/microduck-simulator">browser simulator</a> and <a href="https://github.com/pollen-robotics/microduck_rl">microduck_rl</a></li>
+</ul>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-herath2022foundations" class="csl-entry" role="listitem">
+Herath, Damith, and David St-Onge. 2022. <em>Foundations of Robotics: A Multidisciplinary Approach with Python and ROS</em>. Springer. <a href="https://doi.org/10.1007/978-981-19-1983-1">https://doi.org/10.1007/978-981-19-1983-1</a>.
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<!-- Language switch: the Thai book is at the site root, the English book at /en/ with the same page paths. -->
+<style>
+  .lang-switch { display: inline-block; margin: .4rem 0 .2rem; padding: .15rem .6rem; border: 1px solid var(--bs-border-color, #dee2e6);
+                 border-radius: 999px; font-size: .85rem; text-decoration: none; }
+  .lang-switch:hover { background: var(--bs-tertiary-bg, #f1f3f5); }
+</style>
+<script>
+(function () {
+  var lib = document.querySelector('script[src*="site_libs/"], link[href*="site_libs/"]');
+  if (!lib) return;
+  var root = (lib.src || lib.href).split('site_libs/')[0];          // …/physical-ai-with-microduck-students/  or  …/en/
+  var isEn = /\/en\/$/.test(root);
+  var page = location.href.split('#')[0].slice(root.length);        // ch19/19-1-workflow-patterns/index.html
+  var other = isEn ? root.replace(/en\/$/, '') + page : root + 'en/' + page;
+  var a = document.createElement('a');
+  a.className = 'lang-switch';
+  a.href = other;
+  a.lang = isEn ? 'th' : 'en';
+  a.textContent = isEn ? '🇹🇭 ภาษาไทย' : '🇬🇧 English';
+  var spot = document.querySelector('.sidebar-header') || document.querySelector('#title-block-header') || document.body;
+  spot.appendChild(a);
+  // A page that exists in one language only (e.g. the Thai coding demo) → link to the other book's home.
+  fetch(other, { method: 'HEAD' }).then(function (r) {
+    if (!r.ok) a.href = isEn ? root.replace(/en\/$/, '') : root + 'en/';
+  }).catch(function () {});
+})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+          if (!link.classList.contains('no-external-icon')) {
+          }
+        }
+      }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
+          if (lineIds.length > 0) {
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            placeBand(gutterDiv, el, lastEl);
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
+  </script>
+<nav class="page-navigation" aria-label="Page">
+  <div class="nav-page nav-page-previous">
+      <a href="../index.html" class="pagination-link" aria-label="Home">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Home</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
